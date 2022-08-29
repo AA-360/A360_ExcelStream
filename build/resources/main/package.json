@@ -1,0 +1,348 @@
+{
+    "name": "ExcelStream_Uts",
+    "label": "ExcelStream_Uts",
+    "description": "",
+    "group": "com.automationanywhere",
+    "artifactName": "ExcelStream_Uts",
+    "packageVersion": "1.5-20220720-115823",
+    "codeVersion": "1.5-20220720-115823",
+    "author": "",
+    "commands": [
+        {
+            "name": "SXlsToTable",
+            "label": "SXlsToTable",
+            "nodeLabel": "{{file}} to DataTable",
+            "mainClass": "com.automationanywhere.botcommand.samples.commands.basic.SXlsToTableCommand",
+            "icon": "pkg.svg",
+            "returnType": "TABLE",
+            "returnSubtype": "UNDEFINED",
+            "returnLabel": "",
+            "returnRequired": true,
+            "returnDescription": "DataTable from xls file",
+            "attributes": [
+                {
+                    "name": "file",
+                    "label": "XLS file",
+                    "description": "example: C:\\folder\\file.xls",
+                    "type": "FILE",
+                    "rules": [
+                        {
+                            "name": "NOT_EMPTY"
+                        },
+                        {
+                            "name": "FILE_EXTENSION",
+                            "value": ".xls"
+                        }
+                    ]
+                },
+                {
+                    "name": "getSheetBy",
+                    "label": "Sheet:",
+                    "type": "SELECT",
+                    "defaultValue": {
+                        "string": "name",
+                        "type": "STRING"
+                    },
+                    "rules": [
+                        {
+                            "name": "NOT_EMPTY"
+                        }
+                    ],
+                    "options": [
+                        {
+                            "label": "ByName",
+                            "value": "name",
+                            "attributes": [
+                                {
+                                    "name": "sheetName",
+                                    "label": "Insira o nome da sheet:",
+                                    "description": "Ser\u00e1 adiconada no fim da tabela",
+                                    "type": "TEXT",
+                                    "rules": [
+                                        {
+                                            "name": "NOT_EMPTY"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "label": "ByIndex",
+                            "value": "index",
+                            "attributes": [
+                                {
+                                    "name": "sheetIndex",
+                                    "label": "Insira o index da sheet:",
+                                    "type": "NUMBER",
+                                    "rules": [
+                                        {
+                                            "name": "NOT_EMPTY"
+                                        },
+                                        {
+                                            "name": "GREATER_THAN_EQUALS",
+                                            "value": "0"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Columns",
+                    "label": "Insira as colunas desejadas:",
+                    "description": "Exemplo: A:C ou A|B|C ",
+                    "type": "TEXT",
+                    "rules": [
+                        {
+                            "name": "NOT_EMPTY"
+                        }
+                    ]
+                },
+                {
+                    "name": "hasHeaders",
+                    "label": "Contem cabe\u00e7alhos",
+                    "type": "CHECKBOX",
+                    "defaultValue": {
+                        "boolean": false,
+                        "type": "BOOLEAN"
+                    },
+                    "rules": [
+                        {
+                            "name": "NOT_EMPTY"
+                        }
+                    ]
+                },
+                {
+                    "name": "RowStartCheck",
+                    "label": "Linha de in\u00edcio",
+                    "type": "CHECKBOX",
+                    "defaultValue": {
+                        "boolean": false,
+                        "type": "BOOLEAN"
+                    },
+                    "rules": [
+                        {
+                            "name": "NOT_EMPTY"
+                        }
+                    ],
+                    "attributes": [
+                        {
+                            "name": "RowStart",
+                            "label": "Insira o numero da linha:",
+                            "description": "tem que ser maior que 0",
+                            "type": "NUMBER",
+                            "defaultValue": {
+                                "number": "1",
+                                "type": "NUMBER"
+                            },
+                            "rules": [
+                                {
+                                    "name": "NOT_EMPTY"
+                                },
+                                {
+                                    "name": "GREATER_THAN_EQUALS",
+                                    "value": "1"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Decimal",
+                    "label": "Casas Decimais",
+                    "type": "CHECKBOX",
+                    "defaultValue": {
+                        "boolean": false,
+                        "type": "BOOLEAN"
+                    },
+                    "rules": [
+                        {
+                            "name": "NOT_EMPTY"
+                        }
+                    ],
+                    "attributes": [
+                        {
+                            "name": "DecimalPoints",
+                            "label": "Pontos Decimais:",
+                            "type": "NUMBER",
+                            "rules": [
+                                {
+                                    "name": "NOT_EMPTY"
+                                },
+                                {
+                                    "name": "GREATER_THAN_EQUALS",
+                                    "value": "0"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "SXlsxToTable",
+            "label": "SXlsxToTable",
+            "nodeLabel": "{{file}} to DataTable",
+            "mainClass": "com.automationanywhere.botcommand.samples.commands.basic.SXlsxToTableCommand",
+            "icon": "pkg.svg",
+            "returnType": "TABLE",
+            "returnSubtype": "UNDEFINED",
+            "returnLabel": "",
+            "returnRequired": true,
+            "returnDescription": "DataTable from xlsx file",
+            "attributes": [
+                {
+                    "name": "file",
+                    "label": "XLSX file",
+                    "description": "example: C:\\folder\\file.xlsx",
+                    "type": "FILE",
+                    "rules": [
+                        {
+                            "name": "NOT_EMPTY"
+                        },
+                        {
+                            "name": "FILE_EXTENSION",
+                            "value": ".xlsx"
+                        }
+                    ]
+                },
+                {
+                    "name": "getSheetBy",
+                    "label": "Sheet:",
+                    "type": "SELECT",
+                    "defaultValue": {
+                        "string": "name",
+                        "type": "STRING"
+                    },
+                    "rules": [
+                        {
+                            "name": "NOT_EMPTY"
+                        }
+                    ],
+                    "options": [
+                        {
+                            "label": "ByName",
+                            "value": "name",
+                            "attributes": [
+                                {
+                                    "name": "sheetName",
+                                    "label": "Insira o nome da sheet:",
+                                    "description": "Ser\u00e1 adiconada no fim da tabela",
+                                    "type": "TEXT",
+                                    "rules": [
+                                        {
+                                            "name": "NOT_EMPTY"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "label": "ByIndex",
+                            "value": "index",
+                            "attributes": [
+                                {
+                                    "name": "sheetIndex",
+                                    "label": "Insira o index da sheet:",
+                                    "type": "NUMBER",
+                                    "rules": [
+                                        {
+                                            "name": "NOT_EMPTY"
+                                        },
+                                        {
+                                            "name": "GREATER_THAN_EQUALS",
+                                            "value": "0"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Columns",
+                    "label": "Insira as colunas desejadas:",
+                    "description": "Exemplo: A:C ou A|B|C ",
+                    "type": "TEXT",
+                    "rules": [
+                        {
+                            "name": "NOT_EMPTY"
+                        }
+                    ]
+                },
+                {
+                    "name": "hasHeaders",
+                    "label": "Contem cabe\u00e7alhos",
+                    "type": "CHECKBOX",
+                    "defaultValue": {
+                        "boolean": false,
+                        "type": "BOOLEAN"
+                    },
+                    "rules": [
+                        {
+                            "name": "NOT_EMPTY"
+                        }
+                    ]
+                },
+                {
+                    "name": "RowStartCheck",
+                    "label": "Linha de in\u00edcio",
+                    "type": "CHECKBOX",
+                    "rules": [
+                        {
+                            "name": "NOT_EMPTY"
+                        }
+                    ],
+                    "attributes": [
+                        {
+                            "name": "RowStart",
+                            "label": "Insira o numero da linha:",
+                            "description": "tem que ser maior que 0",
+                            "type": "NUMBER",
+                            "rules": [
+                                {
+                                    "name": "NOT_EMPTY"
+                                },
+                                {
+                                    "name": "GREATER_THAN_EQUALS",
+                                    "value": "1"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Decimal",
+                    "label": "Casas Decimais",
+                    "type": "CHECKBOX",
+                    "defaultValue": {
+                        "boolean": false,
+                        "type": "BOOLEAN"
+                    },
+                    "rules": [
+                        {
+                            "name": "NOT_EMPTY"
+                        }
+                    ],
+                    "attributes": [
+                        {
+                            "name": "DecimalPoints",
+                            "label": "Pontos Decimais:",
+                            "type": "NUMBER",
+                            "rules": [
+                                {
+                                    "name": "NOT_EMPTY"
+                                },
+                                {
+                                    "name": "GREATER_THAN_EQUALS",
+                                    "value": "0"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
