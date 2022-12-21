@@ -4,8 +4,8 @@
     "description": "",
     "group": "com.automationanywhere",
     "artifactName": "ExcelStream_Uts",
-    "packageVersion": "1.5-20220720-115823",
-    "codeVersion": "1.5-20220720-115823",
+    "packageVersion": "1.5-20220907-120302",
+    "codeVersion": "1.5-20220907-120302",
     "author": "",
     "commands": [
         {
